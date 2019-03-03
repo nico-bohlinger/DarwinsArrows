@@ -1,0 +1,27 @@
+html {
+    background: #212121;
+}
+
+canvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;'
+}
+
+.btn {
+    border-color: white;
+    background-color: #212121;
+    color: white;
+    box-shadow: 0px 0px 2em black inset;
+}
+
+.btn.active {
+    border-color: grey;
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 0.5em grey;
+}
+
+.underline {
+    text-decoration: underline;
+}
