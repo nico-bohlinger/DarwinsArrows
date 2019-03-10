@@ -1,4 +1,4 @@
-function draw(){
+function drawV1(){
 	background("#212121");
 
 	stroke(color("white"));

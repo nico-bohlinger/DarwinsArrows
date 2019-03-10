@@ -1,5 +1,7 @@
-function setup(){
+function setupV1(){
 	createCanvas(windowWidth,windowHeight);
+
+	loadGlobalUsedVariablesV1();
 
 	population = new Population();
 
@@ -74,4 +76,29 @@ function setup(){
 	objects_crash.push([30*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
 	objects_crash.push([80*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
 	objects_crash.push([130*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
+}
+
+function loadGlobalUsedVariablesV1(){
+	count = 0;
+
+	pops_slider_startVal = 25;
+	population_size = pops_slider_startVal;
+
+	lifes_slider_startVal = 400;
+	lifespan = lifes_slider_startVal;
+
+	mutarate_slider_startVal = 0.01;
+	mutation_rate = mutarate_slider_startVal;
+
+	force_slider_startVal = 0.8;
+	maxforce = force_slider_startVal;
+
+	mvel_slider_startVal = 12;
+	maxvel = mvel_slider_startVal;
+
+	objects_crash = [];
+
+	vector_mod = 1;
+
+	fit_ind = 0;
 }
