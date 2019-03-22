@@ -4,4 +4,4 @@ var version_enum = {
 	VERSION_3: "Version 3",
 };
 
-var active_version = version_enum.VERSION_1;
+var active_version = version_enum.VERSION_3;

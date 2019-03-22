@@ -1,5 +1,5 @@
-function Arrow(dna){
-	this.thefittest = false
+function ArrowV1(dna){
+	this.thefittest = false;
 	this.completed = false;
 	this.crashed = false;
 	this.pos = createVector(width/2,height-(height/20));
@@ -9,7 +9,7 @@ function Arrow(dna){
 		this.dna = dna;
 	}
 	else{
-		this.dna = new DNA();
+		this.dna = new DNAV1();
 	}
 	this.fitness = 0;
 

@@ -1,4 +1,4 @@
-function DNAV1(genes){
+function DNAV2(genes){
 	if(genes){
 		this.genes = genes;
 	}
@@ -12,21 +12,24 @@ function DNAV1(genes){
 
 	this.crossover = function(partner){
 		var newgenes = [];
-		var mid = floor(random(this.genes.length));
+		// var mid = floor(random(this.genes.length));
+		// for(var i = 0; i < this.genes.length; i++){
+		//   if(i > mid){
+		//     newgenes[i] = this.genes[i];
+		//   }
+		//   else{
+		//     newgenes[i] = partner.genes[i];
+		//   }
+		// }
 		for(var i = 0; i < this.genes.length; i++){
-			if(i > mid){
-				newgenes[i] = this.genes[i];
-			}
-			else{
-				newgenes[i] = partner.genes[i];
-			}
+			newgenes[i] = random([this.genes[i],partner.genes[i]]);
 		}
 		for(var j = newgenes.length; j < lifespan; j++){
 			newgenes.push();
 			newgenes.push(p5.Vector.random2D());
 			newgenes[j].setMag(maxforce)
 		}
-		return new DNAV1(newgenes);
+		return new DNAV2(newgenes);
 	}
 
 	this.mutation = function(){

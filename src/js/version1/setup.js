@@ -3,7 +3,7 @@ function setupV1(){
 
 	loadGlobalUsedVariablesV1();
 
-	population = new Population();
+	population = new PopulationV1();
 
 	target = createVector(width/2,50);
 

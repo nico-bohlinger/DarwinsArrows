@@ -1,10 +1,10 @@
-function Population(){
+function PopulationV1(){
 	this.arrows = [];
 	this.popsize = pops_slider_startVal;
 	this.matingpool = [];
 
 	for(var i = 0; i < this.popsize; i++){
-		this.arrows[i] = new Arrow();
+		this.arrows[i] = new ArrowV1();
 	}
 
 	this.evaluate = function(){
@@ -39,7 +39,7 @@ function Population(){
 			var parentB = random(this.matingpool).dna;
 			var child = parentA.crossover(parentB);
 			child.mutation();
-			newArrows[i] = new Arrow(child);
+			newArrows[i] = new ArrowV1(child);
 		}
 		this.arrows = newArrows;
 	}
