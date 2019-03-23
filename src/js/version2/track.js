@@ -2,13 +2,13 @@ function TrackV2(whichOne){
 	this.segments = [];
 
 	if(whichOne === "A"){
-		var seg1 = new TrackSegment(new lineS([80,100], [180,100]), new lineS([81,420],[181,340]), new lineS([80,100],[81,420]), new lineS([180,100],[181,340]),"under","over");
-		var seg2 = new TrackSegment(new lineS([81,420],[181,340]), new lineS([130,470],[200,370]), new lineS([81,420],[130,470]), new lineS([181,340],[200,370]),"under","over");
-		var seg3 = new TrackSegment(new lineS([130,470],[200,370]), new lineS([330,470],[270,370]), new lineS([130,470],[330,470]), new lineS([200,370],[270,370]),"under","under");
-		var seg4 = new TrackSegment(new lineS([330,470],[270,370]), new lineS([390,420],[290,340]), new lineS([330,470],[390,420]), new lineS([270,370],[290,340]),"over","under");
-		var seg5 = new TrackSegment(new lineS([390,420],[290,340]), new lineS([391,230],[291,150]), new lineS([390,420],[391,230]), new lineS([290,340],[291,150]),"over","under");
-		var seg6 = new TrackSegment(new lineS([391,230],[291,150]), new lineS([420,200],[350,100]), new lineS([391,230],[420,200]), new lineS([291,150],[350,100]),"over","under");
-		var seg7 = new TrackSegment(new lineS([420,200],[350,100]), new lineS([531,200],[530,100]), new lineS([420,200],[531,200]), new lineS([350,100],[530,100]),"over","under");
+		var seg1 = new TrackSegmentV2(new lineSV2([80,100],[180,100]), new lineSV2([81,420],[181,340]), new lineSV2([80,100],[81,420]), new lineSV2([180,100],[181,340]),"under","over");
+		var seg2 = new TrackSegmentV2(new lineSV2([81,420],[181,340]), new lineSV2([130,470],[200,370]), new lineSV2([81,420],[130,470]), new lineSV2([181,340],[200,370]),"under","over");
+		var seg3 = new TrackSegmentV2(new lineSV2([130,470],[200,370]), new lineSV2([330,470],[270,370]), new lineSV2([130,470],[330,470]), new lineSV2([200,370],[270,370]),"under","under");
+		var seg4 = new TrackSegmentV2(new lineSV2([330,470],[270,370]), new lineSV2([390,420],[290,340]), new lineSV2([330,470],[390,420]), new lineSV2([270,370],[290,340]),"over","under");
+		var seg5 = new TrackSegmentV2(new lineSV2([390,420],[290,340]), new lineSV2([391,230],[291,150]), new lineSV2([390,420],[391,230]), new lineSV2([290,340],[291,150]),"over","under");
+		var seg6 = new TrackSegmentV2(new lineSV2([391,230],[291,150]), new lineSV2([420,200],[350,100]), new lineSV2([391,230],[420,200]), new lineSV2([291,150],[350,100]),"over","under");
+		var seg7 = new TrackSegmentV2(new lineSV2([420,200],[350,100]), new lineSV2([531,200],[530,100]), new lineSV2([420,200],[531,200]), new lineSV2([350,100],[530,100]),"over","under");
 		this.segments.push(seg1);
 		this.segments.push(seg2);
 		this.segments.push(seg3);
@@ -29,7 +29,7 @@ function TrackV2(whichOne){
 }
 
 
-function TrackSegment(startFunc,endFunc,lowerFunc,upperFunc,startCheckMethod, endCheckMethod){
+function TrackSegmentV2(startFunc,endFunc,lowerFunc,upperFunc,startCheckMethod, endCheckMethod){
 	this.startBorder = startFunc;
 	this.endBorder = endFunc;
 	this.lowerBorder = lowerFunc;
@@ -56,11 +56,13 @@ function TrackSegment(startFunc,endFunc,lowerFunc,upperFunc,startCheckMethod, en
 }
 
 
-function lineS(p1, p2){
+function lineSV2(p1, p2){
+	this.p1 = [(p1[0]+80) * width/977, (p1[1]-60) * height/466];
+	this.p2 = [(p2[0]+80) * width/977, (p2[1]-60) * height/466];
 	this.name = "line";
-	this.points = [p1, p2];
-	this.m = ((p2[1] - p1[1]) * -1) / (p2[0] - p1[0]);
-	this.b = ((p1[1] * -1) - (this.m * p1[0]));
+	this.points = [this.p1, this.p2];
+	this.m = ((this.p2[1] - this.p1[1]) * -1) / (this.p2[0] - this.p1[0]);
+	this.b = ((this.p1[1] * -1) - (this.m * this.p1[0]));
 
 	this.check = function(p3){
 		if(((this.m * p3[0]) + this.b) > (p3[1] * -1)){

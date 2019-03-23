@@ -222,6 +222,51 @@ function setupV3(){
     // framestuff.style("color","white");
 
 
+    version1P = createP("v.1");
+    version1P.style("color","grey");
+    version1P.style('font-size', "" + width/80 + "px");
+    version1P.style('transform', "rotate(-25deg)");
+    version1P.position(38*width/1900, 38*height/1100);
+
+    version2P = createP("v.2");
+    version2P.style("color","grey");
+    version2P.style('font-size', "" + width/80 + "px");
+    version2P.style('transform', "rotate(25deg)");
+    version2P.position(90*width/1900, 35*height/1100);
+
+    version3P = createP("v.3");
+    version3P.style("color","#FFC34D");
+    version3P.style('font-size', "" + width/80 + "px");
+    version3P.style('transform', "rotate(-25deg)");
+    version3P.position(138*width/1900, 38*height/1100);
+
+    switchTo1Btn = createButton();
+    switchTo1Btn.addClass("transparent_btn");
+    switchTo1Btn.position(35*width/1900, 38*height/1100);
+    switchTo1Btn.mousePressed(switchTo1);
+    function switchTo1(){
+        active_version = version_enum.VERSION_1;
+        setup();
+    }
+
+    switchTo2Btn = createButton();
+    switchTo2Btn.addClass("transparent_btn");
+    switchTo2Btn.position(86*width/1900, 35*height/1100);
+    switchTo2Btn.mousePressed(switchTo2);
+    function switchTo2(){
+        active_version = version_enum.VERSION_2;
+        setup();
+    }
+
+    switchTo3Btn = createButton();
+    switchTo3Btn.addClass("transparent_btn");
+    switchTo3Btn.position(135*width/1900, 38*height/1100);
+    switchTo3Btn.mousePressed(switchTo3);
+    function switchTo3(){
+        active_version = version_enum.VERSION_3;
+        setup();
+    }
+
 
     // Create track, targets and population
     track = new TrackV3("Train");

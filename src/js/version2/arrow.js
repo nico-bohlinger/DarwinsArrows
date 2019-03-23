@@ -3,7 +3,7 @@ function ArrowV2(dna){
 	this.completed = false;
 	this.crashed = false;
 	this.targ_ind = 0;
-	this.pos = createVector(130,150);
+	this.pos = createVector(210*width/977, 90*height/466);
 	this.vel = createVector();
 	this.acc = createVector();
 	if(dna){
@@ -67,25 +67,25 @@ function ArrowV2(dna){
 		push();
 		noStroke();
 		if(this.thefittest){
-			fill("#A6E22E")
+			fill("#A6E22E");
 		}
 		else{
 			fill(255,150);
 		}
-		translate(this.pos.x,this.pos.y);
+		translate(this.pos.x, this.pos.y);
 		rotate(this.vel.heading());
 		rectMode("CENTER");
 		beginShape();
-		vertex(0,0);
-		vertex(10,5);
-		vertex(0,10);
-		vertex(0,7.5);
-		vertex(-20,7.5);
-		vertex(-30,13);
-		vertex(-27,5);
-		vertex(-30,-3);
-		vertex(-20,2.5);
-		vertex(0,2.5);
+		vertex(0, 0);
+		vertex(10*width/1466, 5*height/700);
+		vertex(0, 10*height/700);
+		vertex(0, 7.5*height/700);
+		vertex(-20*width/1466, 7.5*height/700);
+		vertex(-30*width/1466, 13*height/700);
+		vertex(-27*width/1466, 5*height/700);
+		vertex(-30*width/1466, -3*height/700);
+		vertex(-20*width/1466, 2.5*height/700);
+		vertex(0, 2.5*height/700);
 		endShape();
 		pop();
 	}

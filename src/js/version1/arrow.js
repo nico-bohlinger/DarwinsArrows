@@ -58,7 +58,7 @@ function ArrowV1(dna){
 		push();
 		noStroke();
 		if(this.thefittest){
-			fill("#A6E22E")
+			fill("#A6E22E");
 		}
 		else{
 			fill(255,150);

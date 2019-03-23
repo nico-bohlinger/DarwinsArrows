@@ -46,6 +46,12 @@ function drawV3(){
         noFill();
         rect(580,38,255,80);
 
+        // Version switch
+        strokeWeight(3 * width/2200);
+        quad(30*width/1900, 100*height/1100, 30*width/1900, 40*height/1100, 80*width/1900, 20*height/1100, 80*width/1900, 70*height/1100);
+        quad(80*width/1900, 70*height/1100, 80*width/1900, 20*height/1100, 130*width/1900, 40*height/1100, 130*width/1900, 100*height/1100);
+        quad(130*width/1900, 100*height/1100, 130*width/1900, 40*height/1100, 180*width/1900, 20*height/1100, 180*width/1900, 70*height/1100);
+
         // Base for NN block
         stroke(color("white"));
         strokeWeight(6);

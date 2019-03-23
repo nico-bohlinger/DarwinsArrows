@@ -3,8 +3,8 @@ function drawV2(){
 
 	// Draw the track
 	stroke(255);
-	line(80,100,180,100);
-	line(531,200,530,100);
+	line(160*width/977, 40*height/466, 260*width/977, 40*height/466);
+	line(611*width/977, 140*height/466, 610*width/977, 40*height/466);
 	for(var i = 0; i < track.segments.length; i++){
 		if(track.segments[i].lowerBorder.name === "line"){
 			p1 = track.segments[i].lowerBorder.points[0];
@@ -27,15 +27,21 @@ function drawV2(){
 
 	// Around controlls
 	stroke(color("white"));
-	strokeWeight(6);
+	strokeWeight(11 * width/2200);
 	noFill();
-	rect(width-(width/5.5),0+(height/20),width/6,height/1.4);
+	rect(width-(width/5.5), 0+(height/20), width/6, height/1.4);
 
 	// Around generation counter
 	stroke(color("white"));
-	strokeWeight(6);
-	noFill();
-	rect(572,302,240,80);
+	rect(width-(width/2.15), height-(height/1.9), width/4.25, height/7.8);
+
+	// Version switch
+	strokeWeight(3 * width/2200);
+	quad(30*width/1900, 100*height/1100, 30*width/1900, 40*height/1100, 80*width/1900, 20*height/1100, 80*width/1900, 70*height/1100);
+	quad(80*width/1900, 70*height/1100, 80*width/1900, 20*height/1100, 130*width/1900, 40*height/1100, 130*width/1900, 100*height/1100);
+	quad(130*width/1900, 100*height/1100, 130*width/1900, 40*height/1100, 180*width/1900, 20*height/1100, 180*width/1900, 70*height/1100);
+
+	strokeWeight(11 * width/2200);
 
 	// Controlls slider update and label update
 	lifespan = lifes_slider.value();

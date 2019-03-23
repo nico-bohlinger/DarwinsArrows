@@ -11,7 +11,7 @@ function setupV1(){
 	pops_slider_label.style("color","white");
 	pops_slider_label.style('font-size', "" + width/80 + "px");
 	pops_slider_label.position(width-width/6.7, height/11);
-	pops_slider = createSlider(1,50,pops_slider_startVal);
+	pops_slider = createSlider(1,100,pops_slider_startVal);
 	pops_slider.position(width-width/6.7, height/7);
 	pops_slider.style('width', "" + width/10 + "px");
 
@@ -35,7 +35,7 @@ function setupV1(){
 	force_slider_label.style("color","white");
 	force_slider_label.style('font-size', "" + width/80 + "px");
 	force_slider_label.position(width-width/6.7, height/2.06);
-	force_slider = createSlider(0.1,2,force_slider_startVal,0.1);
+	force_slider = createSlider(0.1,3,force_slider_startVal,0.1);
 	force_slider.position(width-width/6.7, height/1.85);
 	force_slider.style('width', "" + width/10 + "px");
 
@@ -43,7 +43,7 @@ function setupV1(){
 	mvel_slider_label.style("color","white");
 	mvel_slider_label.style('font-size', "" + width/80 + "px");
 	mvel_slider_label.position(width-width/6.7, height/1.60);
-	mvel_slider = createSlider(1,20,mvel_slider_startVal,1);
+	mvel_slider = createSlider(1,30,mvel_slider_startVal,1);
 	mvel_slider.position(width-width/6.7, height/1.47);
 	mvel_slider.style('width', "" + width/10 + "px");
 
@@ -76,6 +76,33 @@ function setupV1(){
 	objects_crash.push([30*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
 	objects_crash.push([80*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
 	objects_crash.push([130*width/1900, 20*height/1100, 50*width/1900, 100*height/1100]);
+
+	switchTo1Btn = createButton();
+	switchTo1Btn.addClass("transparent_btn");
+	switchTo1Btn.position(35*width/1900, 38*height/1100);
+	switchTo1Btn.mousePressed(switchTo1);
+	function switchTo1(){
+		active_version = version_enum.VERSION_1;
+		setup();
+	}
+
+	switchTo2Btn = createButton();
+	switchTo2Btn.addClass("transparent_btn");
+	switchTo2Btn.position(86*width/1900, 35*height/1100);
+	switchTo2Btn.mousePressed(switchTo2);
+	function switchTo2(){
+		active_version = version_enum.VERSION_2;
+		setup();
+	}
+
+	switchTo3Btn = createButton();
+	switchTo3Btn.addClass("transparent_btn");
+	switchTo3Btn.position(135*width/1900, 38*height/1100);
+	switchTo3Btn.mousePressed(switchTo3);
+	function switchTo3(){
+		active_version = version_enum.VERSION_3;
+		setup();
+	}
 }
 
 function loadGlobalUsedVariablesV1(){

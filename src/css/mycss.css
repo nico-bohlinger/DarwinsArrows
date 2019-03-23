@@ -25,3 +25,11 @@ canvas {
 .underline {
     text-decoration: underline;
 }
+
+.transparent_btn {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    width: 2vw;
+    height: 2vw;
+}
