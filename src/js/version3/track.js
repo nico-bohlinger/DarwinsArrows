@@ -82,10 +82,12 @@ function TrackSegmentV3(startFunc,endFunc,lowerFunc,upperFunc,startCheckMethod, 
 
 
 function lineS(p1, p2){
+    this.p1 = [(p1[0]) * width/1280, (p1[1]) * height/620];
+    this.p2 = [(p2[0]) * width/1280, (p2[1]) * height/620];
     this.name = "line";
-    this.points = [p1, p2];
-    this.m = ((p2[1] - p1[1]) * -1) / (p2[0] - p1[0]);
-    this.b = ((p1[1] * -1) - (this.m * p1[0]));
+    this.points = [this.p1, this.p2];
+    this.m = ((this.p2[1] - this.p1[1]) * -1) / (this.p2[0] - this.p1[0]);
+    this.b = ((this.p1[1] * -1) - (this.m * this.p1[0]));
 
     this.check = function(p3){
         if(((this.m * p3[0]) + this.b) > (p3[1] * -1)){

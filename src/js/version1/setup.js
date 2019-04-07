@@ -11,7 +11,7 @@ function setupV1(){
 	pops_slider_label.style("color","white");
 	pops_slider_label.style('font-size', "" + width/80 + "px");
 	pops_slider_label.position(width-width/6.7, height/11);
-	pops_slider = createSlider(1,100,pops_slider_startVal);
+	pops_slider = createSlider(1,1000,pops_slider_startVal);
 	pops_slider.position(width-width/6.7, height/7);
 	pops_slider.style('width', "" + width/10 + "px");
 

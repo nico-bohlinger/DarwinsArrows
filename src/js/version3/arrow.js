@@ -3,7 +3,7 @@ function ArrowV3(dna){
 	this.completed = false;
 	this.crashed = false;
 	this.targ_ind = 0;
-	this.pos = createVector(130,150);
+	this.pos = createVector(210*width/2100, 90*height/370);
 	this.vel = createVector();
 	this.acc = createVector();
 	if(dna){
@@ -74,9 +74,9 @@ function ArrowV3(dna){
 					this.measured_distances.push(mag(this.pos.x - this.sensor_results[i][0], this.pos.y - this.sensor_results[i][1]));
 					if(showSensors){
 						stroke("#82AAFF");
-						strokeWeight(5);
+						strokeWeight(10 * width/2200);
 						point(this.sensor_results[i][0], this.sensor_results[i][1]);
-						strokeWeight(6);
+						strokeWeight(11 * width/2200);
 					}
 				}
 				this.old_pos = [this.pos.x, this.pos.y];
@@ -97,25 +97,25 @@ function ArrowV3(dna){
 		push();
 		noStroke();
 		if(this.thefittest){
-			fill("#A6E22E")
+			fill("#A6E22E");
 		}
 		else{
 			fill(255,150);
 		}
-		translate(this.pos.x,this.pos.y);
+		translate(this.pos.x, this.pos.y);
 		rotate(this.vel.heading());
 		rectMode("CENTER");
 		beginShape();
-		vertex(0,0);
-		vertex(10,5);
-		vertex(0,10);
-		vertex(0,7.5);
-		vertex(-20,7.5);
-		vertex(-30,13);
-		vertex(-27,5);
-		vertex(-30,-3);
-		vertex(-20,2.5);
-		vertex(0,2.5);
+		vertex(0, 0);
+		vertex(10*width/1466, 5*height/700);
+		vertex(0, 10*height/700);
+		vertex(0, 7.5*height/700);
+		vertex(-20*width/1466, 7.5*height/700);
+		vertex(-30*width/1466, 13*height/700);
+		vertex(-27*width/1466, 5*height/700);
+		vertex(-30*width/1466, -3*height/700);
+		vertex(-20*width/1466, 2.5*height/700);
+		vertex(0, 2.5*height/700);
 		endShape();
 		pop();
 	}
@@ -125,7 +125,7 @@ function ArrowV3(dna){
 		this.completed = false;
 		this.crashed = false;
 		this.targ_ind = 0;
-		this.pos = createVector(130,150);
+		this.pos = createVector(210*width/2100, 90*height/370);
 		this.vel = createVector();
 		this.acc = createVector();
 		this.fitness = 0;
@@ -148,7 +148,7 @@ function ArrowV3(dna){
 							stroke("red");
 						}
 						var factor = abs(c_weights[(j*dict[i+1]) + k]);
-						strokeWeight(2 * (factor));
+						strokeWeight((0.3 * width/2200) + ((2 * width/2200) * (factor)));
 						line(all_points_NN[i][j][0], all_points_NN[i][j][1], all_points_NN[i+1][k][0], all_points_NN[i+1][k][1]);
 					});
 				}
@@ -165,23 +165,23 @@ function ArrowV3(dna){
 		});
 		stroke(color("white"));
 		noFill();
-		rect(580,190,350,220);
+		rect(width-(width/1.83), 0+(height/3.3), width/3.66, height/2.82);
 		for(var i = 0; i < 5; i++){
-			strokeWeight(15 * (1 + biases_dict[i]));
-			point(640,240 + (i * 30));
+			strokeWeight((25 * width/2200) * (1 + 3*biases_dict[i]));
+			point(640*width/1280, (240 + (i * 30))*height/620);
 		}
 		for(var i = 0; i < 6; i++){
-			strokeWeight(15 * (1 + biases_dict[5 + i]));
-			point(720,225 + (i * 30));
+			strokeWeight((25 * width/2200) * (1 + 3*biases_dict[5 + i]));
+			point(720*width/1280, (225 + (i * 30))*height/620);
 		}
 		for(var i = 0; i < 4; i++){
-			strokeWeight(15 * (1 + biases_dict[11 + i]));
-			point(800,255 + (i * 30));
+			strokeWeight((25 * width/2200) * (1 + 3*biases_dict[11 + i]));
+			point(800*width/1280, (255 + (i * 30))*height/620);
 		}
 		for(var i = 0; i < 2; i++){
-			strokeWeight(15 * (1 + biases_dict[15 + i]));
-			point(880,285 + (i * 30));
+			strokeWeight((25 * width/2200) * (1 + 3*biases_dict[15 + i]));
+			point(880*width/1280, (285 + (i * 30))*height/620);
 		}
-		strokeWeight(6);
+		strokeWeight(10 * width/2200);
 	}
 }

@@ -5,6 +5,7 @@ function drawV3(){
 
         // Draw the track
         stroke(255);
+        strokeWeight(11 * width/2200);
         var b1 = track.segments[0].startBorder.points[0];
         var b2 = track.segments[0].startBorder.points[1];
         var e1 = track.segments[track.segments.length-1].endBorder.points[0];
@@ -36,15 +37,15 @@ function drawV3(){
 
         // Around controlls
         stroke(color("white"));
-        strokeWeight(6);
+        strokeWeight(11 * width/2200);
         noFill();
-        rect(1280-(1280/5.6),0+(628/25),1280/6,628/1.4);
+        rect(width-(width/5.5), 0+(height/20), width/6, height/1.4);
 
         // Around generation counter
         stroke(color("white"));
-        strokeWeight(6);
+        strokeWeight(10 * width/2200);
         noFill();
-        rect(580,38,255,80);
+        rect(width-(width/1.83), 0+(height/16), width/5, height/7.79);
 
         // Version switch
         strokeWeight(3 * width/2200);
@@ -54,36 +55,31 @@ function drawV3(){
 
         // Base for NN block
         stroke(color("white"));
-        strokeWeight(6);
+        strokeWeight(10 * width/2200);
         noFill();
-        rect(580,190,350,220);
-        strokeWeight(0,001);
+        rect(width-(width/1.83), 0+(height/3.3), width/3.66, height/2.82);
+        strokeWeight(25 * width/2200);
         all_points_NN = []; // not good style to do it everytime
         var some = [];
         for(var i = 0; i < 5; i++){
-            some.push([640,240 + (i * 30)]);
-            point(640,240 + (i * 30));
+            some.push([640*width/1280, (240 + (i * 30))*height/620]);
         }
         all_points_NN.push(some);
         some = [];
         for(var i = 0; i < 6; i++){
-            some.push([720,225 + (i * 30)]);
-            point(720,225 + (i * 30));
+            some.push([720*width/1280, (225 + (i * 30))*height/620]);
         }
         all_points_NN.push(some);
         some = [];
         for(var i = 0; i < 4; i++){
-            some.push([800,255 + (i * 30)]);
-            point(800,255 + (i * 30));
+            some.push([800*width/1280, (255 + (i * 30))*height/620]);
         }
         all_points_NN.push(some);
         some = [];
         for(var i = 0; i < 2; i++){
-            some.push([880,285 + (i * 30)]);
-            point(880,285 + (i * 30));
+            some.push([880*width/1280, (285 + (i * 30))*height/620]);
         }
         all_points_NN.push(some);
-        strokeWeight(6);
 
         // Controlls slider update and label update
         lifespan = lifes_slider.value();
